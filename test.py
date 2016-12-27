@@ -8,7 +8,7 @@ class Test:
 
 	data = []
 
-	def __init__(self, infile='test_data.json'):
+	def __init__(self, infile):
 
 		print("Loading raw data from %s...\n" % infile)
 
@@ -24,15 +24,6 @@ class Test:
 		for title in self.data:
 			title['features'] = fe.get_features(title['article_title'].encode('utf-8'))
 
-	def output_test_data(self, outfile='development_data.json'):
-
-		print("Writing updated json data to %s...\n" % outfile)
-
-		with open(outfile, 'w') as o:
-			for d in self.data:
-				json.dump(d, o)
-				o.write("\n")
-
 	def get_data(self):
 		return [d['features'] for d in self.data]
 
@@ -44,7 +35,7 @@ with open('training_data.json', 'r') as f:
 
 
 def test(typ):
-	te = Test('test_%s.json' % typ)
+	te = Test('testing_data/test_%s.json' % typ)
 	test_raw = te.data
 	test_set = te.get_data()
 
@@ -53,22 +44,12 @@ def test(typ):
 
 	print(classifier.show_most_informative_features())
 
-	# toprint = []
-
-	# for (i, r) in enumerate(results):
-	# 	tup = (test_raw[i]['article_title'].encode('utf-8'), r)
-	# 	if tup not in toprint:
-	# 		toprint.append(tup)
-
-	with open('output_%s.txt' % typ, 'w') as o:
+	with open('results/output_%s.txt' % typ, 'w') as o:
 		for (i, r) in enumerate(results):
 
 			toprint = test_raw[i]['article_title'].encode('utf-8')
 
 			o.write("%s\t%s\n" % (toprint.replace('\n', ' '), r))
-
-		# for (t, r) in toprint:
-		# 	o.write("%s\t%s\n")
 
 test(sys.argv[1])
 
