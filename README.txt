@@ -24,4 +24,4 @@ Files:
 	
 	training_data: directory holding annotated training data separated by source
 	
-	AnnaFenske_finalproject.pdf: ACL-style write-up.
+	ACL_REPORT.pdf: ACL-style write-up.
