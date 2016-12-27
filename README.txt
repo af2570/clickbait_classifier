@@ -3,6 +3,8 @@ NLP Final Project
 
 CLICKBAIT CLASSIFIER
 
+(See ACL REPORT.pdf for a detailed description of the program)
+
 Files:
 	features.py: feature extractor
 	
