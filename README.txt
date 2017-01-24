@@ -27,4 +27,4 @@ Files:
 	
 	training_data: directory holding annotated training data separated by source
 	
-	ACL REPORT.pdf: ACL-style write-up.
+	REPORT.pdf: detailed ACL-style write-up.
