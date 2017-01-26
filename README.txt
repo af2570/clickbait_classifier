@@ -11,7 +11,7 @@ Files:
 	train.py: collect featuresets of training data, write them to training_data.json
 	
 	test.py: train classifier and test on test_clickbait.json and test_news.json
-		TO RUN: python test.py [news/clickbait/all]
+		TO RUN: python test.py [news OR clickbait OR all]
 	
 	testing_data\test_clickbait.json: corpus of headlines from Buzzfeed (not in training corpus) for testing
 		results\output_clickbait.txt: output from test.py on test_clickbait.json
@@ -26,5 +26,3 @@ Files:
 	NOTE: training_data.json not included in this repository (file size too large). This should not be an issue though since test.py runs train.py.
 	
 	training_data: directory holding annotated training data separated by source
-	
-	REPORT.pdf: detailed ACL-style write-up.
